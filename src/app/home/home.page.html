@@ -1,0 +1,38 @@
+<div class="ion-page" id="main-content">
+  <ion-header >
+    <ion-toolbar style="text-align: center;" color="dark">
+      <ion-title>ABC Compras</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content  [fullscreen]="true">
+    <ion-img [src]="imagem" ></ion-img>
+    <ion-searchbar placeholder="Pesquisar"></ion-searchbar>
+
+<ion-list  >
+  <ion-item-sliding *ngFor="let produto of meusProdutos">
+    <ion-item>
+    <ion-label>{{ produto.item }}</ion-label>
+    <ion-label>{{ produto.quant}} Kg/Qntd </ion-label>
+    </ion-item>
+
+   <!--  <ion-button (click)="deletar(produto.id)" color="danger">Excluir</ion-button> -->
+  
+   <ion-item-options>
+    <ion-item-option color="danger">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-item-option>
+
+    <ion-item-option color="success">
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+    <ion-fab horizontal="end" vertical="bottom">
+      <ion-fab-button color="dark" routerLink="/criar-lista">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+</div>
